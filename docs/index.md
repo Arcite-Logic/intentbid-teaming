@@ -55,6 +55,15 @@ Teaming flows directly into L1/L2/L3:
 
 Start with recommendation + intro + activation. Avoid a heavy marketplace until demand proves it.
 
+## Compliance callout for federal teaming
+
+For federal opportunities, Teaming Copilot must apply contract-aware limitations on subcontracting (LOS):
+
+- do not hard-code a universal 49% partner rule
+- enforce LOS only where applicable (for example, FAR 52.219-14 context)
+- evaluate limits by contract type and similarly situated entity handling
+- flag potential unusual reliance / ostensible subcontractor risk as an explicit warning
+
 ## Pathway
 
 ### Phase 1 - Pilot POC: Manual partner onboarding
@@ -69,6 +78,7 @@ Start with recommendation + intro + activation. Avoid a heavy marketplace until 
 - show a simple readiness delta:
   - before partner: blockers and gaps
   - after partner: gaps closed and bid readiness lift
+- capture estimated partner work-share and show LOS compliance status (pass/warn/fail)
 
 ### Phase 2 - Foundation
 
@@ -106,12 +116,13 @@ Start with recommendation + intro + activation. Avoid a heavy marketplace until 
 | --- | --- | --- |
 | M1 Manual partner POC | Users add partners manually and map gaps per bid | intentwin |
 | M2 Readiness delta view | Before/after partner impact is visible and explainable | intentwin + intentbid-intelligence |
-| M3 Schema + scoring contract | Teaming profile and fit factors locked | intentbid-teaming + intentbid-intelligence |
-| M4 Recommendation API | Opportunity-specific partner recommendations live | intentbid-intelligence |
-| M5 In-app Teaming panel | "Find partner for this gap" UX live | intentwin |
-| M6 Intro + status workflow | Lightweight partner activation in product | intentwin |
-| M7 Proposal integration | Teaming strategy appears in intent + generated content | intentwin |
-| M8 Feedback calibration | Closed-loop ranking improvement | intentbid-intelligence |
+| M3 LOS guardrail check | Contract-aware subcontracting limit warnings and checks | intentwin + intentbid-intelligence |
+| M4 Schema + scoring contract | Teaming profile and fit factors locked | intentbid-teaming + intentbid-intelligence |
+| M5 Recommendation API | Opportunity-specific partner recommendations live | intentbid-intelligence |
+| M6 In-app Teaming panel | "Find partner for this gap" UX live | intentwin |
+| M7 Intro + status workflow | Lightweight partner activation in product | intentwin |
+| M8 Proposal integration | Teaming strategy appears in intent + generated content | intentwin |
+| M9 Feedback calibration | Closed-loop ranking improvement | intentbid-intelligence |
 
 ## Strategic result
 

@@ -40,6 +40,16 @@ Build an **Opportunity-Scoped Teaming Copilot** that answers:
 - **Opportunity-native**: teaming starts inside each opportunity and pre-flight workflow.
 - **Intent-consistent**: all partner strategy flows through L1/L2/L3 model.
 
+## Federal teaming compliance callout (LOS)
+
+For federal opportunities, Teaming Copilot must use contract-aware limitations on subcontracting (LOS) checks.
+
+- do not use a universal "49% partner max" rule
+- apply LOS rules when FAR 52.219-14 / set-aside context is present
+- enforce by contract type (services/supplies/construction variants) and similarly situated logic
+- in the POC, require estimated partner work-share input and show LOS compliance status in readiness delta
+- flag potential "unusual reliance / ostensible subcontractor" risk when partner scope appears primary/vital
+
 ## How it fits IntentBid architecture
 
 ### L1 - Company Truth
@@ -79,6 +89,7 @@ Generate partner-aware artifacts:
 - show a deterministic "readiness delta":
   - before partner: current gaps and blockers
   - after partner: gaps closed and score uplift
+- capture estimated work-share by partner and show LOS pass/warn/fail status
 
 ### Phase A: Data foundation
 
@@ -148,11 +159,12 @@ IntentBid Teaming is differentiated by being:
 
 1. Ship manual partner onboarding flow in opportunity context (POC).
 2. Add readiness delta view (before vs after partner).
-3. Define canonical teaming profile schema and scoring contract.
-4. Ship intelligence endpoint for opportunity-scoped teaming recommendations.
-5. Add "Find partner for this gap" UI in opportunity + pre-flight flows.
-6. Add intro workflow and status tracking.
-7. Add L2/L3 proposal integration and feedback calibration.
+3. Add LOS compliance callout/check (contract-aware limits + partner share input).
+4. Define canonical teaming profile schema and scoring contract.
+5. Ship intelligence endpoint for opportunity-scoped teaming recommendations.
+6. Add "Find partner for this gap" UI in opportunity + pre-flight flows.
+7. Add intro workflow and status tracking.
+8. Add L2/L3 proposal integration and feedback calibration.
 
 ## GitHub landing page
 
