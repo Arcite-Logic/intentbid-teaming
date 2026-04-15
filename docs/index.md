@@ -64,10 +64,19 @@ For federal opportunities, Teaming Copilot must apply contract-aware limitations
 - evaluate limits by contract type and similarly situated entity handling
 - flag potential unusual reliance / ostensible subcontractor risk as an explicit warning
 
+## Planning guardrails
+
+- define the readiness delta model before building the UI
+- keep compliance outputs advisory, not legal determinations
+- separate results into coverage fit, compliance flags, and structure risk
+- require confidence labels when inputs are incomplete
+- keep teaming connected to proposal strategy and generation, not as a disconnected tool
+
 ## Pathway
 
-### Phase 1 - Pilot POC: Manual partner onboarding
+### Phase 1 - Pilot POC: Readiness model + manual partner onboarding
 
+- define the readiness delta model and output taxonomy first
 - allow users to manually add teaming partners per opportunity
 - collect key partner details:
   - identity and contact
@@ -79,32 +88,39 @@ For federal opportunities, Teaming Copilot must apply contract-aware limitations
   - before partner: blockers and gaps
   - after partner: gaps closed and bid readiness lift
 - capture estimated partner work-share and show LOS compliance status (pass/warn/fail)
+- add confidence labels and counsel-review prompts where needed
 
-### Phase 2 - Foundation
+### Phase 2 - Compliance and structure guardrails
 
-- define teaming profile schema
+- build LOS and structure-risk checks as a standalone advisory rule module
+- evaluate contract type, similarly situated handling, and unusual reliance risk
+
+### Phase 3 - Foundation and schema
+
+- define teaming profile schema and freshness model
 - unify profile and opportunity requirement taxonomy
 - finalize deterministic scoring contract
 
-### Phase 3 - Team Builder recommendations
+### Phase 4 - Team Builder recommendations
 
 - build opportunity-scoped recommendation endpoint
 - ship "fills your gap" reasoning output
-- return top candidate partners with risk notes
+- return top candidate partners with risk notes and confidence labels
 
-### Phase 4 - Activation flow
+### Phase 5 - Activation flow
 
 - add intro requests and role selection
 - add acceptance state tracking
 - support secure, scoped collaboration artifacts
 
-### Phase 5 - Proposal integration
+### Phase 6 - Proposal integration
 
 - integrate with pre-flight readiness
 - generate teaming plan and role matrix drafts
 - support partner-aware compliance and win-theme content
+- keep compliance and structure warnings visible during proposal generation
 
-### Phase 6 - Learning loop
+### Phase 7 - Learning loop
 
 - measure contacted -> accepted -> submitted -> won
 - calibrate ranking weights from outcomes
@@ -114,15 +130,16 @@ For federal opportunities, Teaming Copilot must apply contract-aware limitations
 
 | Milestone | Outcome | Primary Repo |
 | --- | --- | --- |
-| M1 Manual partner POC | Users add partners manually and map gaps per bid | intentwin |
-| M2 Readiness delta view | Before/after partner impact is visible and explainable | intentwin + intentbid-intelligence |
-| M3 LOS guardrail check | Contract-aware subcontracting limit warnings and checks | intentwin + intentbid-intelligence |
-| M4 Schema + scoring contract | Teaming profile and fit factors locked | intentbid-teaming + intentbid-intelligence |
-| M5 Recommendation API | Opportunity-specific partner recommendations live | intentbid-intelligence |
-| M6 In-app Teaming panel | "Find partner for this gap" UX live | intentwin |
-| M7 Intro + status workflow | Lightweight partner activation in product | intentwin |
-| M8 Proposal integration | Teaming strategy appears in intent + generated content | intentwin |
-| M9 Feedback calibration | Closed-loop ranking improvement | intentbid-intelligence |
+| M1 Readiness model | Teaming output taxonomy and confidence model locked | intentbid-teaming |
+| M2 Manual partner POC | Users add partners manually and map gaps per bid | intentwin |
+| M3 Readiness delta view | Before/after partner impact is visible and explainable | intentwin + intentbid-intelligence |
+| M4 LOS guardrail module | Contract-aware subcontracting and structure-risk warnings | intentbid-intelligence |
+| M5 Schema + scoring contract | Teaming profile, freshness fields, and fit factors locked | intentbid-teaming + intentbid-intelligence |
+| M6 Recommendation API | Opportunity-specific partner recommendations live | intentbid-intelligence |
+| M7 In-app Teaming panel | "Find partner for this gap" UX live | intentwin |
+| M8 Intro + status workflow | Lightweight partner activation in product | intentwin |
+| M9 Proposal integration | Teaming strategy appears in intent + generated content | intentwin |
+| M10 Feedback calibration | Closed-loop ranking improvement | intentbid-intelligence |
 
 ## Strategic result
 

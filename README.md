@@ -50,6 +50,17 @@ For federal opportunities, Teaming Copilot must use contract-aware limitations o
 - in the POC, require estimated partner work-share input and show LOS compliance status in readiness delta
 - flag potential "unusual reliance / ostensible subcontractor" risk when partner scope appears primary/vital
 
+## Operating guardrails
+
+- treat teaming outputs as **informational compliance support, not legal advice**
+- separate outputs into:
+  - coverage fit
+  - compliance / eligibility flags
+  - structure risk
+- use confidence labels when data is incomplete or unverified
+- require fresh, sourced partner data for high-risk claims where possible
+- keep teaming decisions connected to proposal strategy, not as a standalone sidebar
+
 ## How it fits IntentBid architecture
 
 ### L1 - Company Truth
@@ -78,8 +89,12 @@ Generate partner-aware artifacts:
 
 ## Team Builder path (aligned with existing intelligence roadmap)
 
-### Phase 1 (POC): Manual partner onboarding + readiness delta
+### Phase 1 (POC): Readiness model + manual partner onboarding
 
+- define the readiness delta model before building UI:
+  - what moves an opportunity from weak to stronger
+  - what is coverage-only vs compliance-sensitive
+  - what requires contracts/legal review
 - let users manually add teaming partners from opportunity context
 - capture lightweight partner profile fields:
   - identity: company, website, contact, preferred role (prime/sub/JV/SME)
@@ -90,15 +105,22 @@ Generate partner-aware artifacts:
   - before partner: current gaps and blockers
   - after partner: gaps closed and score uplift
 - capture estimated work-share by partner and show LOS pass/warn/fail status
+- add confidence labels: no issue detected / potential risk / insufficient data / counsel review recommended
 
-### Phase A: Data foundation
+### Phase 2: Compliance and structure guardrails
 
+- build LOS and structure-risk logic as a standalone, versioned rule module
+- evaluate LOS applicability, contract type, similarly situated handling, and role structure
+- flag ostensible subcontractor / unusual reliance risk separately from simple percentage checks
+
+### Phase 3: Data foundation and schema
+
+- define canonical teaming profile schema and evidence freshness fields
 - ingest and normalize candidate partner data (SBA profile signals + platform profiles)
 - build teaming relationship graph from available subcontract/relationship signals
 - map capability and eligibility attributes to opportunity requirement schema
 
-### Phase B: Recommendation engine
-
+### Phase 4: Recommendation engine
 - detect opportunity-specific gaps from current match profile + opportunity requirements
 - rank partner candidates by weighted deterministic score:
   - gap coverage quality
@@ -106,21 +128,22 @@ Generate partner-aware artifacts:
   - vehicle and clearance fit
   - geography fit
   - relationship recency / teaming history
-- return top candidates with explicit explanation and risk flags
+- return top candidates with explicit explanation, risk flags, and confidence labels
 
-### Phase C: Activation workflow
+### Phase 5: Activation workflow
 
 - one-click intro request with redacted opportunity summary
 - role selection (prime/sub/JV/SME)
 - lightweight status flow: requested, accepted, declined
 
-### Phase D: Proposal integration
+### Phase 6: Proposal integration
 
 - inject teaming strategy into bid/no-bid and pre-flight readiness
 - auto-draft teaming narrative and role matrix for proposal sections
 - preserve claim traceability to L1 evidence and partner profile signals
+- update L2 teaming strategy and keep warnings visible during L3 generation
 
-### Phase E: Feedback loop
+### Phase 7: Feedback loop
 
 - capture outcomes (contacted, accepted, submitted, won/lost)
 - calibrate weights and explanations from real performance data
@@ -157,14 +180,16 @@ IntentBid Teaming is differentiated by being:
 
 ## Near-term build sequence
 
-1. Ship manual partner onboarding flow in opportunity context (POC).
-2. Add readiness delta view (before vs after partner).
-3. Add LOS compliance callout/check (contract-aware limits + partner share input).
-4. Define canonical teaming profile schema and scoring contract.
-5. Ship intelligence endpoint for opportunity-scoped teaming recommendations.
-6. Add "Find partner for this gap" UI in opportunity + pre-flight flows.
-7. Add intro workflow and status tracking.
-8. Add L2/L3 proposal integration and feedback calibration.
+1. Lock the readiness delta model and output taxonomy.
+2. Ship manual partner onboarding flow in opportunity context (POC).
+3. Add readiness delta view with confidence labels.
+4. Build LOS + structure-risk checks as a standalone advisory rule module.
+5. Define canonical teaming profile schema, freshness fields, and scoring contract.
+6. Ship intelligence endpoint for opportunity-scoped teaming recommendations.
+7. Add "Find partner for this gap" UI in opportunity + pre-flight flows.
+8. Add intro workflow and status tracking.
+9. Make proposal integration explicit in L2/L3 flow.
+10. Add feedback calibration after real usage data exists.
 
 ## GitHub landing page
 
