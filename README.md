@@ -68,6 +68,18 @@ Generate partner-aware artifacts:
 
 ## Team Builder path (aligned with existing intelligence roadmap)
 
+### Phase 1 (POC): Manual partner onboarding + readiness delta
+
+- let users manually add teaming partners from opportunity context
+- capture lightweight partner profile fields:
+  - identity: company, website, contact, preferred role (prime/sub/JV/SME)
+  - fit signals: NAICS, certifications, set-asides, vehicles, clearance, coverage states
+  - proof: capability tags + past-performance blurbs
+  - bid mapping: which gap the partner closes (compliance/capability/geography/vehicle)
+- show a deterministic "readiness delta":
+  - before partner: current gaps and blockers
+  - after partner: gaps closed and score uplift
+
 ### Phase A: Data foundation
 
 - ingest and normalize candidate partner data (SBA profile signals + platform profiles)
@@ -134,11 +146,13 @@ IntentBid Teaming is differentiated by being:
 
 ## Near-term build sequence
 
-1. Define canonical teaming profile schema and scoring contract.
-2. Ship intelligence endpoint for opportunity-scoped teaming recommendations.
-3. Add "Find partner for this gap" UI in opportunity + pre-flight flows.
-4. Add intro workflow and status tracking.
-5. Add L2/L3 proposal integration and feedback calibration.
+1. Ship manual partner onboarding flow in opportunity context (POC).
+2. Add readiness delta view (before vs after partner).
+3. Define canonical teaming profile schema and scoring contract.
+4. Ship intelligence endpoint for opportunity-scoped teaming recommendations.
+5. Add "Find partner for this gap" UI in opportunity + pre-flight flows.
+6. Add intro workflow and status tracking.
+7. Add L2/L3 proposal integration and feedback calibration.
 
 ## GitHub landing page
 

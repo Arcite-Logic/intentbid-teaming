@@ -57,31 +57,44 @@ Start with recommendation + intro + activation. Avoid a heavy marketplace until 
 
 ## Pathway
 
-### Phase 1 - Foundation
+### Phase 1 - Pilot POC: Manual partner onboarding
+
+- allow users to manually add teaming partners per opportunity
+- collect key partner details:
+  - identity and contact
+  - role preference (prime/sub/JV/SME)
+  - NAICS, certifications, set-asides, vehicles, clearance, geography
+  - capability proof snippets and past performance notes
+  - mapped gap this partner closes
+- show a simple readiness delta:
+  - before partner: blockers and gaps
+  - after partner: gaps closed and bid readiness lift
+
+### Phase 2 - Foundation
 
 - define teaming profile schema
 - unify profile and opportunity requirement taxonomy
 - finalize deterministic scoring contract
 
-### Phase 2 - Team Builder recommendations
+### Phase 3 - Team Builder recommendations
 
 - build opportunity-scoped recommendation endpoint
 - ship "fills your gap" reasoning output
 - return top candidate partners with risk notes
 
-### Phase 3 - Activation flow
+### Phase 4 - Activation flow
 
 - add intro requests and role selection
 - add acceptance state tracking
 - support secure, scoped collaboration artifacts
 
-### Phase 4 - Proposal integration
+### Phase 5 - Proposal integration
 
 - integrate with pre-flight readiness
 - generate teaming plan and role matrix drafts
 - support partner-aware compliance and win-theme content
 
-### Phase 5 - Learning loop
+### Phase 6 - Learning loop
 
 - measure contacted -> accepted -> submitted -> won
 - calibrate ranking weights from outcomes
@@ -91,12 +104,14 @@ Start with recommendation + intro + activation. Avoid a heavy marketplace until 
 
 | Milestone | Outcome | Primary Repo |
 | --- | --- | --- |
-| M1 Schema + scoring contract | Teaming profile and fit factors locked | intentbid-teaming + intentbid-intelligence |
-| M2 Recommendation API | Opportunity-specific partner recommendations live | intentbid-intelligence |
-| M3 In-app Teaming panel | "Find partner for this gap" UX live | intentwin |
-| M4 Intro + status workflow | Lightweight partner activation in product | intentwin |
-| M5 Proposal integration | Teaming strategy appears in intent + generated content | intentwin |
-| M6 Feedback calibration | Closed-loop ranking improvement | intentbid-intelligence |
+| M1 Manual partner POC | Users add partners manually and map gaps per bid | intentwin |
+| M2 Readiness delta view | Before/after partner impact is visible and explainable | intentwin + intentbid-intelligence |
+| M3 Schema + scoring contract | Teaming profile and fit factors locked | intentbid-teaming + intentbid-intelligence |
+| M4 Recommendation API | Opportunity-specific partner recommendations live | intentbid-intelligence |
+| M5 In-app Teaming panel | "Find partner for this gap" UX live | intentwin |
+| M6 Intro + status workflow | Lightweight partner activation in product | intentwin |
+| M7 Proposal integration | Teaming strategy appears in intent + generated content | intentwin |
+| M8 Feedback calibration | Closed-loop ranking improvement | intentbid-intelligence |
 
 ## Strategic result
 
